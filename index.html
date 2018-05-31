@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="js/scripts.js"></script>
+  <script>
+  class MyElement extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow( {model:'open'}).innerHTML = 'Web Components are native!'
+    }
+  }
+
+  customElements.define('my-element', MyElement);
+    </script>
+  
+</head>
+<body>
+  <h1>Starter Page</h1>
+  <p>Hello you sorry ass world!</p>
+
+  <my-element></my-element>
+  
+  <select id="mySelect" onchange="typeChange(this)">
+	<option value="">All</option>
+	<option value="projects.html">Projects</option>
+	<option value="reports.html">Reports</option>
+  </select>
+
+
+</body>
+</html>
